@@ -3,7 +3,7 @@ using UnityEngine;
 public class MoveMent : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public float moveSpeed;
+    public float moveSpeed = 5f;
 
     void Start()
     {
@@ -12,22 +12,24 @@ public class MoveMent : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position += Vector3.back * moveSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-        }
+        ///Input System (Old - Legacy)
+        ///입력값에 대한 약속된 시스템
+        ///이동 -> WASD, 화살표키보드
+        ///점프->Space
+        ///총쏘기-> 마우스 왼쪽 
+        
+        //부드럽게 증감하는 값
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+
+        // 딱 떨어지는 값
+        //float h = Input.GetAxisRaw("Horizontal");
+        //float v = Input.GetAxisRaw("Vertical");
+
+        Vector3 dir = new Vector3(h, 0, v);
+        Debug.Log($"현재 입력: {dir}");
+
+        transform.position += dir * moveSpeed * Time.deltaTime;
     }
 }
 
