@@ -9,7 +9,7 @@ public class StudyGameObject : MonoBehaviour
     //public Vector3 pos;
     //public Quaternion rot;
    
-    void Start()
+    void Awake()
     {
         Debug.Log("생성되었습니다.");
         CreateAmongus();

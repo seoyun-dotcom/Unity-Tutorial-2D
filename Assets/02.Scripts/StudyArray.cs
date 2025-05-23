@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StudyArray : MonoBehaviour
 {
-    //List<int> listNumber = new List<int>();
+    List<int> listNumber = new List<int>();
 
     int number1 = 1;
     private int number2 = 2;
@@ -14,7 +14,7 @@ public class StudyArray : MonoBehaviour
     private int number4 = 4;
 
     [SerializeField] int number5 = 5;
-    /*void Start()
+    void Start()
     {
         listNumber.Add(10);
         listNumber.Add(50);
@@ -22,12 +22,12 @@ public class StudyArray : MonoBehaviour
         listNumber.Add(20);
         listNumber.Add(60);
 
-                                                //arraryNumber.Length
+        //arraryNumber.Length
         Debug.Log($"현재 List에 있는 데이터 수 : {listNumber.Count}");
         Debug.Log($"현재 List의 마지막 데이터 수 : {listNumber[listNumber.Count - 1]}");
-        
 
 
 
-    } */
+
+    }
 }
